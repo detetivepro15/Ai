@@ -21,7 +21,7 @@ jobs:
       - name: Build Debug APK
         run: ./gradlew assembleDebug --continue
       - name: Upload APK
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: app-debug-apk
