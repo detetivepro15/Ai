@@ -1,0 +1,6 @@
+{
+  "name": "PaciFácil",
+  "description": "Tradução da Situação & Resolução Direta sem Litígio com Termos de Entendimento e Paz.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
