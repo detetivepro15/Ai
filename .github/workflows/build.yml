@@ -1,6 +1,9 @@
 name: Build Android Release
 on:
+  workflow_dispatch:
   push:
+    branches:
+      - main
     tags:
       - 'v*'
 jobs:
@@ -12,12 +15,12 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Build APK e AAB
+      - name: Build APK
         run: |
           chmod +x gradlew || true
-          ./gradlew assembleRelease bundleRelease || gradle assembleRelease bundleRelease
+          ./gradlew assembleRelease || gradle assembleRelease
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-release-apk
-          path: app/build/outputs/apk/release/
+          path: app/build/outputs/apk/
